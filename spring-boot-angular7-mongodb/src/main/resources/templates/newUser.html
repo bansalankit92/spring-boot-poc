@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Thanks for Signup</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;
+        }
+
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+Hi <span th:text="${user.fullName}"></span>,
+<br/>
+<div>
+  <p>Thank you for joining World's Best Dancer Community!!.
+  <br/>You can now upload your dancing videos at https://worldsbestdancercup.com/#/home/upload and
+    get a chance to win worth $10000 cash prize or at least get famous in the community.
+    <br/>In the meanwhile you are getting famous, you also get a chance to earn few bucks using our referral system.
+    On top of that if you are the highest referral, you will get $5000 cash prize at the end of this event.
+  </p>
+  <p>
+    <strong>Referral/Coupon Code:</strong> <span th:text="${user.referralCode.code}"></span>
+   <br/> <strong>Discount to others(%):</strong> <span th:text="${user.referralCode.discountPercent}"></span>
+   <br/> <strong>Referral bonus(%):</strong> <span th:text="${user.referralCode.referralPercent}"></span>
+  </p>
+
+</div>
+<div>
+  <p>Also don't forget to update your social media links on
+    https://worldsbestdancercup.com/#/home/profile page, we are going to share your links on our social media handles.</p>
+</div>
+<br/>
+<div>
+  Regards,
+  <br/> WorldsBestDancersCup'18
+</div>
+</body>
+</html>
