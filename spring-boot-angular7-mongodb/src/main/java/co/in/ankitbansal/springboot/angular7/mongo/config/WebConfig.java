@@ -15,11 +15,14 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -29,6 +32,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "co.in.ankitbansal.springboot.angular7.mongo.controller")
+@Order(Ordered.HIGHEST_PRECEDENCE)
 public class WebConfig implements WebMvcConfigurer {
 
   public static final String API_SERVICES_URL_PATTERN = "/api/services/*";
@@ -68,7 +72,7 @@ public class WebConfig implements WebMvcConfigurer {
   public InternalResourceViewResolver internalViewResolver() {
     InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
     viewResolver.setPrefix("/dist/");
-    viewResolver.setSuffix(".html");
+    viewResolver.setSuffix(TEMPLATE_SUFFIX);
     viewResolver.setOrder(2);
     return viewResolver;
   }
@@ -109,6 +113,11 @@ public class WebConfig implements WebMvcConfigurer {
     registration.addUrlPatterns(API_SERVICES_URL_PATTERN);
     registration.setDispatcherTypes(EnumSet.allOf(DispatcherType.class));
     return registration;
+  }
+
+  @Override
+  public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/").setViewName("forward:/dist/index.html");
   }
 
 }
