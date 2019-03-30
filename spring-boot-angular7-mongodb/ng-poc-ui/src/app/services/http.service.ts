@@ -11,7 +11,7 @@ const httpOptions = {
 @Injectable()
 export class HttpService {
 
-  constructor(private http: HttpClient, private urlConstantsService: UrlConstantService) {}
+  constructor(private http: HttpClient) {}
 
   get(url, httpParams ?: HttpParams): Observable < any > {
     if (httpParams) {

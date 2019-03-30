@@ -1,0 +1,31 @@
+<mat-card>
+    <span class="error" *ngIf="error">{{error}}</span>
+    <form>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.emailId" name="user.emailId" id="emailId" placeholder="Email Id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.fullName" name="user.fullName" id="fullName" placeholder="Full Name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.mobile" name="user.mobile" id="mobile" placeholder="Mobile">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.facebookId" name="user.facebookId" id="facebookId" placeholder="facebook Id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.instagramId" name="user.instagramId" id="instagramId" placeholder="instagram Id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.twitterId" name="user.twitterId" id="twitterId" placeholder="twitter Id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.linkedinId" name="user.linkedinId" id="linkedinId" placeholder="linkedin Id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="user.snapchatId" name="user.snapchatId" id="snapchatId" placeholder="snapchat Id">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" (click)="submitUserDetails()" >Add New</button>
+        
+    </form>
+</mat-card>

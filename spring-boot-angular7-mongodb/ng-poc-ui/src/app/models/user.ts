@@ -21,7 +21,7 @@ export class User {
   updatedDate: string;
   username: string;
 
-  constructor({}) {
+  constructor() {
   }
 
 }

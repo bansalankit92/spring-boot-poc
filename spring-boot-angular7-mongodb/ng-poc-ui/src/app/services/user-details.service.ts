@@ -6,6 +6,8 @@ import { HttpParams } from '@angular/common/http';
 import { HttpParamsOptions } from '@angular/common/http/src/params';
 import { UserDetailsDto } from '../models/user-details-dto';
 import { Pageable } from '../models/pageable';
+import { User } from '../models/user';
+import { UserQueryParams } from '../models/user-query-params';
 
 
 @Injectable()
@@ -35,9 +37,13 @@ export class UserDetailsService {
     return this.httpService.putWithoutId(this.url, body);
   }
 
-  getUsers(queryParams): Observable < Pageable > {
-    const httpParams: HttpParamsOptions = {fromObject: queryParams} as HttpParamsOptions;
+  getUsers(queryParams: UserQueryParams): Observable < Pageable > {
+    const httpParams: HttpParamsOptions = {fromObject: queryParams as object} as HttpParamsOptions;
     return this.httpService.get(this.url, new HttpParams(httpParams));
+  }
+
+  getAll(): Observable<User> {
+    return this.httpService.get(this.url);
   }
 
 }
