@@ -41,11 +41,11 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
   private ApiInfo apiInfo() {
     List<VendorExtension> list = new ArrayList<>();
-    return new ApiInfo("SpringBootAngular7Mysql",
-        "This API exposes methods to interact with SpringBootAngular7Mysql Application .",
+    return new ApiInfo("SpringBootAngular7Mongodb",
+        "This API exposes methods to interact with SpringBootAngular7Mongodb Application .",
         "V1.0", "Terms of service",
-        new Contact("SpringBootAngular7Mysql", "https://ankitbansal.co.in",
-            "admin@SpringBootAngular7Mysql.com"),
+        new Contact("SpringBootAngular7Mongodb", "https://ankitbansal.co.in",
+            "admin@SpringBootAngular7Mongodb.com"),
         "License of API", "API license URL",
         list);
   }

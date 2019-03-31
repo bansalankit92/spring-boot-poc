@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.in.ankitbansal</groupId>
-	<artifactId>SpringBootAngular7Mysql</artifactId>
+	<artifactId>SpringBootAngular7Mongodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootAngular7Mysql</name>
+	<name>SpringBootAngular7Mongodb</name>
 	<description>Complete end to end Full stack Java8 Spring boot, Angular7, Mysql project ready to develop any application</description>
 
 	<properties>
